@@ -51,34 +51,31 @@ Dear Mr. Murrah and Members of the Georgia Department of Agriculture:
 </button>
         
     </form>
-          <script>
+         <script>
 function sendComment() {
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const organization = document.getElementById('organization').value.trim();
-    const city = document.getElementById('city').value.trim();
-    const message = document.getElementById('message').value.trim();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const organization = document.getElementById('organization').value;
+    const city = document.getElementById('city').value;
+    const message = document.getElementById('message').value;
 
     const fullMessage =
-`${message}
-
----------------------------------
+message +
+`\n\n---------------------------------\n
 Name: ${name}
 Email: ${email}
-Organization: ${organization || 'N/A'}
-City: ${city || 'N/A'}`;
+Organization: ${organization}
+City: ${city}`;
 
-    navigator.clipboard.writeText(fullMessage).then(function() {
-        alert("Your comment has been copied. Your email app should open next. If the message is not pasted automatically, paste it into the email body.");
+    const subject = encodeURIComponent(
+        'Public Comment on Proposed Amendments to Georgia Animal Protection Act Rules'
+    );
 
-        const subject = encodeURIComponent("Public Comment on Proposed Amendments to Georgia Animal Protection Act Rules");
-        window.location.href = `mailto:mkang60@gmail.com?subject=${subject}`;
-    }).catch(function() {
-        alert("Please copy your comment from the message box, then email it to CAECompliance@agr.georgia.gov.");
+    const body = encodeURIComponent(fullMessage);
 
-        const subject = encodeURIComponent("Public Comment on Proposed Amendments to Georgia Animal Protection Act Rules");
-        window.location.href = `mailto:mkang60@gmail.com?subject=${subject}`;
-    });
+    window.location.href =
+        `mailto:mkang60@gmail.com?subject=${subject}&body=${body}`;
 }
 </script>
         </section>
