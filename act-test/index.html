@@ -19,24 +19,21 @@ title: Animal Protection Act
         <input type="hidden" name="_cc" value="gwinnettanimalshelteradvocates@gmail.com">
         <input type="hidden" name="_subject" value="RE: Public Comment on Proposed Amendments to Georgia Animal Protection Act Rules 40-13-13-.01 through 40-13-13-.10">
         <div class="form-group">
-            <label for="name">Full Name:</label>
+            <label for="name">Full Name: (Required)</label>
             <input type="text" id="name" name="name" placeholder="Full Name" required>
+        </div>
+           <div class="form-group">
+            <label for="city">City / State: (Required)</label>
+            <input type="text" id="city" name="city" placeholder="Your City">
         </div>
         <div class="form-group">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" placeholder="Email" required>
         </div>
-
         <div class="form-group">
             <label for="organization">Organization (Optional):</label>
             <input type="text" id="organization" name="organization" placeholder="Company Inc.">
         </div>
-
-        <div class="form-group">
-            <label for="city">City (Optional):</label>
-            <input type="text" id="city" name="city" placeholder="Your City">
-        </div>
-
         <div class="form-group">
             <label for="message">Your Message:</label>
             <textarea id="message" name="message" rows="35">
@@ -47,6 +44,10 @@ Thank you for the opportunity to comment on the proposed amendments to Georgia's
 I appreciate the Department's efforts to improve animal welfare oversight and provide clearer definitions regarding cats entering Georgia's shelter system. However, I respectfully request that the Department address a significant gap in the proposed rules by recognizing feral cats, community cats, community caretakers, and Trap-Neuter-Return (TNR) programs.
 
 While the proposed amendments define domestic cats and stray cats, they do not clearly address free-roaming community cats that are managed through TNR programs across Georgia. These cats represent a significant portion of the outdoor cat population and are regularly cared for by volunteers, rescue organizations, veterinarians, and community caretakers.
+
+Community cats are also the source of many of the kittens and cats that ultimately enter Georgia's already overwhelmed shelters. By reducing reproduction through Trap-Neuter-Return programs, communities can help prevent future shelter intake rather than relying solely on shelters to manage the consequences of unchecked population growth.
+
+There is also a significant financial incentive to invest in prevention. Providing clear recognition and guidance for TNR programs, including clarification that properly managed TNR is not considered abandonment, could encourage greater participation by local governments and animal welfare organizations in effective population management strategies. Prevention-based approaches can reduce shelter intake, improve animal welfare outcomes, and lessen the burden on taxpayers and local shelter systems.
 
 I respectfully encourage the Department to consider adding definitions for:
 
@@ -74,13 +75,16 @@ Respectfully,
     </form>
          <script>
 function sendComment() {
-
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const city = document.getElementById('city').value.trim();
     const organization = document.getElementById('organization').value;
-    const city = document.getElementById('city').value;
     const message = document.getElementById('message').value;
 
+if (!name || !city) {
+    alert("Please complete all required fields.");
+    return;
+}
     const fullMessage =
 message +
 `\n\n---------------------------------\n
