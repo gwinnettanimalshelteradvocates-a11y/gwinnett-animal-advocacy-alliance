@@ -1,5 +1,4 @@
 title: Gwinnett Animal Advocacy Alliance
 description: Advocating for the animals of Gwinnett County.
-# Keep baseurl and url blank if using a custom domain
-baseurl: "" 
-url: ""
+baseurl: "/gwinnett-animal-advocacy-alliance"
+url: "https://gwinnettanimalshelteradvocates-a11y.github.io"
