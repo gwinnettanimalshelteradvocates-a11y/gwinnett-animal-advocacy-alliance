@@ -170,27 +170,7 @@
     }
 
     footer { text-align: center; padding: 40px; color: #777; }
-    </style> 
-</head>
-<body>
-    <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v25.0&appId=APP_ID"></script>
-    {% include navigation.html %}
-
-    <div class="container">
-        {{ content }}
-    </div>
-<footer>
-    <div class="social-links">
-        <a href="https://www.facebook.com/gwinnettanimaladvocacyalliance" target="_blank" aria-label="Facebook">
-            <i class="fab fa-facebook"></i>
-        </a>
-        <a href="https://www.instagram.com/gwinnettanimalshelteradvocates" target="_blank" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-        </a>
-    </div>
-    <p>&copy; 2026 Gwinnett Animal Advocacy Alliance</p>
-    @media (max-width: 768px) {
+      @media (max-width: 768px) {
     nav {
         flex-direction: column;
         align-items: center;
@@ -198,20 +178,20 @@
     }
 
     .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px 16px;
-        margin-top: 10px;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 12px;
+    margin-top: 10px;
+}
 
     .nav-links li {
         margin-left: 0;
     }
 
-    .nav-links a {
-        font-size: 0.9rem;
-    }
-
+   .nav-links a {
+    font-size: 0.8rem;
+}
     .container {
         padding: 1rem;
         max-width: 100%;
@@ -245,6 +225,27 @@
         padding: 14px;
     }
 }
+    </style> 
+</head>
+<body>
+    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v25.0&appId=APP_ID"></script>
+    {% include navigation.html %}
+
+    <div class="container">
+        {{ content }}
+    </div>
+<footer>
+    <div class="social-links">
+        <a href="https://www.facebook.com/gwinnettanimaladvocacyalliance" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/gwinnettanimalshelteradvocates" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+    <p>&copy; 2026 Gwinnett Animal Advocacy Alliance</p>
+    
 </footer>
 </body>
 </html>
