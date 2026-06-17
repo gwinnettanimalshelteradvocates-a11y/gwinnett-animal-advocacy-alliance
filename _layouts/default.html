@@ -82,6 +82,37 @@
     }
 
     .nav-links a:hover { color: var(--accent); }
+    .dropdown {
+    position: relative;
+}
+
+    .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--white);
+        list-style: none;
+        padding: 10px 0;
+        margin: 0;
+        min-width: 250px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+.dropdown:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    margin-left: 0;
+}
+
+.submenu a {
+    display: block;
+    padding: 10px 16px;
+    white-space: nowrap;
+}
 
       .logo-img {
     width: 100%;
