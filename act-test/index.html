@@ -24,7 +24,7 @@ title: Animal Protection Act
         </div>
            <div class="form-group">
             <label for="city">City / State: (Required)</label>
-            <input type="text" id="city" name="city" placeholder="Your City/State">
+            <input type="text" id="city" name="city" placeholder="Your City/State" required>
         </div>
         <div class="form-group">
             <label for="organization">Organization (Optional):</label>
@@ -33,7 +33,7 @@ title: Animal Protection Act
         <div class="form-group">
             <label for="message">Your Message:</label>
             <textarea id="message" name="message" rows="35">
-Dear Mr. Murrah and Members of the Georgia Department of Agriculture:,
+Dear Mr. Murrah and Members of the Georgia Department of Agriculture,
 
 Thank you for the opportunity to comment on the proposed amendments to Georgia's Animal Protection Act Rules.
 
@@ -69,24 +69,25 @@ Respectfully,
 </button>
         
     </form>
-         <script>
+        <script>
 function sendComment() {
     const name = document.getElementById('name').value.trim();
     const city = document.getElementById('city').value.trim();
-    const organization = document.getElementById('organization').value;
-    const message = document.getElementById('message').value;
+    const organization = document.getElementById('organization').value.trim();
+    const message = document.getElementById('message').value.trim();
 
-if (!name || !city) {
-    alert("Please complete all required fields.");
-    return;
-}
+    if (!name || !city) {
+        alert("Please complete all required fields.");
+        return;
+    }
+
     const fullMessage =
-message +
-`\n\n---------------------------------\n
-Name: ${name}
-City/State: ${city}`;
-Organization: ${organization}
+`${message}
 
+---------------------------------
+Name: ${name}
+City/State: ${city}
+Organization: ${organization || 'N/A'}`;
 
     const subject = encodeURIComponent(
         'RE: Public Comment on Proposed Amendments to Georgia Animal Protection Act'
