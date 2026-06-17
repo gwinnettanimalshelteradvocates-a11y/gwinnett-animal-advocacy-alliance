@@ -1,1 +1,108 @@
+---
+layout: default
+title: Animal Protection Act
+---
+<div class="hero-banner">
+    <img src="{{ site.baseurl }}/assets/tnr-banner.jpg"
+         alt="Support Community Cats and Trap-Neuter-Return Programs in Georgia">
+</div>
+        <section class="advocacy-form">
+            <h2>Submit a Comment on Georgia's Proposed Animal Protection Act Rule Changes</h2>
+                <p>The Georgia Department of Agriculture is currently accepting public comments on proposed amendments to the Animal Protection Act Rules through <strong>June 22, 2026</strong>.</p>
+                <p>The proposed amendments would add definitions for domestic cats and stray cats, update shelter and rescue intake provisions, and revise recordkeeping requirements. However, many animal welfare advocates are concerned that the proposal does not address important categories of cats commonly managed through Trap-Neuter-Return (TNR) programs, including feral cats, community cats, and community caretakers.</p>
+                <p>Without clear definitions and guidance, shelters, rescue organizations, veterinarians, local governments, and volunteers may face uncertainty regarding how community cats and managed TNR programs fit within Georgia's animal welfare framework.</p>
+                <p>We encourage Georgia residents to respectfully share their views with the Department and request that community cats, feral cats, community caretakers, and TNR programs be formally recognized within the Animal Protection Act Rules.</p>
+                <p>You can review the proposed amendments directly on the Georgia Department of Agriculture website <a href="https://agr.georgia.gov/legal/notice-intent-amend-animal-protection-act-rules" target="_blank">here</a>.</p>
+                <p>Please use the form below to submit your comment.</p>
+    
+    <form id="commentForm">
+        <input type="hidden" name="_cc" value="gwinnettanimalshelteradvocates@gmail.com">
+        <input type="hidden" name="_subject" value="RE: Public Comment on Proposed Amendments to Georgia Animal Protection Act Rules 40-13-13-.01 through 40-13-13-.10">
+        <div class="form-group">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Full Name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+        </div>
 
+        <div class="form-group">
+            <label for="organization">Organization (Optional):</label>
+            <input type="text" id="organization" name="organization" placeholder="Company Inc.">
+        </div>
+
+        <div class="form-group">
+            <label for="city">City (Optional):</label>
+            <input type="text" id="city" name="city" placeholder="Your City">
+        </div>
+
+        <div class="form-group">
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="35">
+RE: Public Comment on Proposed Amendments to Georgia Animal Protection Act Rules 40-13-13-.01 through 40-13-13-.10
+                
+Dear Mr. Murrah,
+
+Thank you for the opportunity to comment on the proposed amendments to Georgia's Animal Protection Act Rules.
+
+I appreciate the Department's efforts to improve animal welfare oversight and provide clearer definitions regarding cats entering Georgia's shelter system. However, I respectfully request that the Department address a significant gap in the proposed rules by recognizing feral cats, community cats, community caretakers, and Trap-Neuter-Return (TNR) programs.
+
+While the proposed amendments define domestic cats and stray cats, they do not clearly address free-roaming community cats that are managed through TNR programs across Georgia. These cats represent a significant portion of the outdoor cat population and are regularly cared for by volunteers, rescue organizations, veterinarians, and community caretakers.
+
+I respectfully encourage the Department to consider adding definitions for:
+
+• Feral Cat – a free-roaming cat that is not socialized to humans and is generally unsuitable for placement as a household pet.
+
+• Community Cat – a free-roaming outdoor cat, whether feral or socialized, that lives in a community setting.
+
+• Community Caretaker – a person who voluntarily provides food, water, shelter, monitoring, or veterinary care for community cats.
+
+I also request clarification that cats returned to their established territory through a managed Trap-Neuter-Return program are not considered abandoned animals when ongoing caretaker oversight exists.
+
+Providing clear definitions and guidance regarding community cats and TNR programs would improve consistency in enforcement, recordkeeping, and animal welfare practices throughout Georgia while supporting humane efforts to reduce pet overpopulation.
+
+Thank you for your consideration and your continued commitment to animal welfare.
+
+Respectfully,
+
+[Name]
+[Organization, if applicable]
+[City, Georgia]
+            </textarea>
+        </div>
+
+<button type="button" class="btn" onclick="sendComment()">
+    Open Email Draft
+</button>
+        
+    </form>
+          <script>
+function sendComment() {
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const organization = document.getElementById('organization').value;
+    const city = document.getElementById('city').value;
+    const message = document.getElementById('message').value;
+
+    const fullMessage =
+message +
+`\n\n---------------------------------\n
+Name: ${name}
+Email: ${email}
+Organization: ${organization}
+City: ${city}`;
+
+    const subject = encodeURIComponent(
+        'Public Comment on Proposed Amendments to Georgia Animal Protection Act Rules'
+    );
+
+    const body = encodeURIComponent(fullMessage);
+
+    window.location.href =
+        `mailto:mkang60@gmail.com?subject=${subject}&body=${body}`;
+}
+</script>
+        </section>
+</html>
