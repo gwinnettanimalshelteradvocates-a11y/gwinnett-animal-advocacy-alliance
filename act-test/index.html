@@ -42,27 +42,7 @@ title: Animal Protection Act
             <textarea id="message" name="message" rows="35">
 Dear Mr. Murrah and Members of the Georgia Department of Agriculture:
 
-Thank you for the opportunity to comment on the proposed amendments to Georgia's Animal Protection Act Rules.
 
-I appreciate the Department's efforts to improve animal welfare oversight and provide clearer definitions regarding cats entering Georgia's shelter system. However, I respectfully request that the Department address a significant gap in the proposed rules by recognizing feral cats, community cats, community caretakers, and Trap-Neuter-Return (TNR) programs.
-
-While the proposed amendments define domestic cats and stray cats, they do not clearly address free-roaming community cats that are managed through TNR programs across Georgia. These cats represent a significant portion of the outdoor cat population and are regularly cared for by volunteers, rescue organizations, veterinarians, and community caretakers.
-
-I respectfully encourage the Department to consider adding definitions for:
-
-• Feral Cat – a free-roaming cat that is not socialized to humans and is generally unsuitable for placement as a household pet.
-
-• Community Cat – a free-roaming outdoor cat, whether feral or socialized, that lives in a community setting.
-
-• Community Caretaker – a person who voluntarily provides food, water, shelter, monitoring, or veterinary care for community cats.
-
-I also request clarification that cats returned to their established territory through a managed Trap-Neuter-Return program are not considered abandoned animals when ongoing caretaker oversight exists.
-
-Providing clear definitions and guidance regarding community cats and TNR programs would improve consistency in enforcement, recordkeeping, and animal welfare practices throughout Georgia while supporting humane efforts to reduce pet overpopulation.
-
-Thank you for your consideration and your continued commitment to animal welfare.
-
-Respectfully,
             </textarea>
         </div>
 
@@ -73,28 +53,32 @@ Respectfully,
     </form>
           <script>
 function sendComment() {
-
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const organization = document.getElementById('organization').value;
-    const city = document.getElementById('city').value;
-    const message = document.getElementById('message').value;
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const organization = document.getElementById('organization').value.trim();
+    const city = document.getElementById('city').value.trim();
+    const message = document.getElementById('message').value.trim();
 
     const fullMessage =
-message +
+`${message}
+
+---------------------------------
 Name: ${name}
 Email: ${email}
-Organization: ${organization}
-City: ${city}`;
+Organization: ${organization || 'N/A'}
+City: ${city || 'N/A'}`;
 
-    const subject = encodeURIComponent(
-        'RE: Public Comment on Proposed Amendments to Georgia Animal Protection Act Rules 40-13-13-.01 through 40-13-13-.10'
-    );
+    navigator.clipboard.writeText(fullMessage).then(function() {
+        alert("Your comment has been copied. Your email app should open next. If the message is not pasted automatically, paste it into the email body.");
 
-    const body = encodeURIComponent(fullMessage);
+        const subject = encodeURIComponent("Public Comment on Proposed Amendments to Georgia Animal Protection Act Rules");
+        window.location.href = `mailto:mkang60@gmail.com?subject=${subject}`;
+    }).catch(function() {
+        alert("Please copy your comment from the message box, then email it to CAECompliance@agr.georgia.gov.");
 
-    window.location.href =
-        `mailto:mkang60@gmail.com?subject=${subject}&body=${body}`;
+        const subject = encodeURIComponent("Public Comment on Proposed Amendments to Georgia Animal Protection Act Rules");
+        window.location.href = `mailto:mkang60@gmail.com?subject=${subject}`;
+    });
 }
 </script>
         </section>
