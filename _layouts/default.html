@@ -206,17 +206,17 @@
             color: var(--accent);
         }
 
-        .page-hero {
-            width: 100vw;
-            margin-left: calc(50% - 50vw);
-            min-height: 700px;
-            border-radius: 0;
+       .page-hero {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto 40px;
+            min-height: 600px;
+            border-radius: 12px;
             background-size: cover;
             background-position: center;
             display: flex;
             align-items: center;
             overflow: hidden;
-            margin-bottom: 40px;
         }
 
         .page-hero-content {
@@ -289,8 +289,8 @@
             color: var(--primary);
         }
 
-        .contact-section {
-                   max-width: 1400px;
+       .contact-section {
+            max-width: 1400px;
             margin: 0 auto;
             padding: 60px 20px;
             box-sizing: border-box;
@@ -304,7 +304,7 @@
             margin-right: auto;
         }
 
-       .profile-grid {
+        .profile-grid {
             display: grid;
             gap: 20px;
             margin-top: 30px;
@@ -315,7 +315,7 @@
             grid-template-columns: repeat(5, minmax(220px, 1fr));
         }
 
-     .profile-grid.three-across {
+         .profile-grid.three-across {
             grid-template-columns: repeat(3, minmax(280px, 1fr));
         }
 
