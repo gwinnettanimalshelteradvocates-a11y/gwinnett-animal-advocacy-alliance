@@ -98,11 +98,16 @@
             color: var(--accent);
         }
 
-        .action-nav > a {
-            background: var(--accent);
-            color: white !important;
-            padding: 10px 16px;
-            border-radius: 6px;
+        .action-nav > a::after {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            margin-left: 6px;
+            border-right: 2px solid currentColor;
+            border-bottom: 2px solid currentColor;
+            transform: rotate(45deg);
+            vertical-align: middle;
         }
 
         .dropdown {
