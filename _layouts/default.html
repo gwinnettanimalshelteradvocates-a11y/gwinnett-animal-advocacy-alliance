@@ -272,32 +272,46 @@
 
 @media (max-width: 768px) {
     .leadership-hero {
-        min-height: 650px;
-        background-image:
-            linear-gradient(
-                to bottom,
-                rgba(0,0,0,.70) 0%,
-                rgba(0,0,0,.45) 45%,
-                rgba(0,0,0,.15) 100%
-            ),
-            url('{{ site.baseurl }}/assets/contact-leadership-hero-mobile.png');
+        width: 100%;
+        margin-left: 0;
+        min-height: auto;
+        background-image: url('{{ site.baseurl }}/assets/contact-leadership-hero-mobile-square.png');
         background-size: cover;
         background-position: center;
-        align-items: flex-start;
+        display: block;
+        border-radius: 8px;
+        aspect-ratio: 1 / 1;
+        margin-bottom: 20px;
     }
 
     .leadership-hero-content {
-        padding: 35px 28px;
+        background: white;
+        color: var(--primary);
+        padding: 24px 0 0 0;
         max-width: 100%;
     }
 
+    .leadership-hero-content h1,
+    .leadership-hero-content p {
+        color: var(--primary);
+    }
+
     .leadership-hero-content h1 {
-        font-size: 2.6rem;
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 18px;
     }
 
     .leadership-hero-content p {
         font-size: 1rem;
+        line-height: 1.6;
     }
+
+    .leadership-hero .btn {
+        width: auto;
+        display: inline-block;
+    }
+}
 }
     </style> 
 </head>
